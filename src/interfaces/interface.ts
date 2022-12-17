@@ -15,18 +15,19 @@ interface Invoice_property_damage_data_type {
 	type: string;
 	id: string;
 }
-interface Invoice_property_damage_data {
-	data: Invoice_property_damage_data_type;
+
+interface Invoice_property_damage_items {
+	links: Invoice_property_damage_link;
+	data: Invoice_property_damage_data_type
 }
 interface Invoice_property_damage {
-	links: Invoice_property_damage_link;
-	data: Invoice_property_damage_data;
+	property_damage: Invoice_property_damage_items;
 }
-export interface Invoice {
+export interface IInvoice {
 	type: string,
 	id: string;
 	attributes: Invoice_attributes;
-	relationship: Invoice_property_damage;
+	relationships: Invoice_property_damage;
 	links: Invoice_links;
 }
 
@@ -37,20 +38,23 @@ interface IPropertyDamage_attributes {
 	damage_date: string;
 	report_date: string;
 }
-
 interface IPropertyDamage_relationships_residential_building {
 	links: Invoice_property_damage_link;
 	data: Invoice_property_damage_data_type;
+}
+export interface IPropertyDamage_invoices_data {
+	type: string;
+	id: string;
+}
+interface IPropertyDamage_invoices {
+	meta: { count: string };
+	data: IPropertyDamage_invoices_data[];
+	links: Invoice_property_damage_link;
 }
 
 interface IPropertyDamage_relationships {
 	invoices: IPropertyDamage_invoices;
 	residential_building: IPropertyDamage_relationships_residential_building;
-}
-
-interface IPropertyDamage_invoices extends Invoice_property_damage_link {
-	meta: { count: string };
-	data: Invoice_property_damage_data_type;
 }
 
 export interface IPropertyDamage {
@@ -60,7 +64,6 @@ export interface IPropertyDamage {
 	relationships: IPropertyDamage_relationships;
 	links: Invoice_links;
 }
-
 //################ResidentialBuilding interfaces###################
 
 interface ResidentialBuilding_attributes {
