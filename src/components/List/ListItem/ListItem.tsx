@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
+
 import { IPropertyDamage } from "../../../interfaces/interface";
-import Invoice from "../InvoiceItem/InvoiceItem";
 
 import styles from "./ListItem.module.scss";
 

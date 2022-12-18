@@ -31,10 +31,11 @@ const Invoice: FC = () => {
 	if (isError) {
 		return <div className={styles.content}>error</div>
 	}
+
 	if (isLoading) {
 		return <div className={styles.content}>loading...</div>
 	}
-	console.log(invoice)
+
 	return (
 		<div className={styles.content}>
 			<div>

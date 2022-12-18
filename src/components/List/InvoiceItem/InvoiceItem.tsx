@@ -9,7 +9,6 @@ interface InvoiceProps {
 }
 
 const InvoiceItem: FC<InvoiceProps> = ({ invoice }) => {
-
 	return (
 		<li><Link to={`/invoice/${invoice.id}`}>{invoice.type}</Link></li>
 	);

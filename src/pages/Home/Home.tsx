@@ -34,6 +34,7 @@ const Home: FC = () => {
 	if (isLoaded) {
 		return <div className={styles.content}>loading...</div>
 	}
+
 	return (
 		<div className={styles.content}>
 			<h1 className={styles.title}>Property damage</h1>
