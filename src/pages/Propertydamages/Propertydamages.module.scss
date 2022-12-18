@@ -1,13 +1,26 @@
-.content{
+.propertydamages{
 	padding: 20px;
 	margin-top: 60px;
 	flex: 1 0 100%;
 	color: #7d7676;
 	font-size: 18px;
 	background: #ffff;
+	div{
+		a{
+			color: #1565c0;
+		}
+	}
 	p{
-		span{
+		span {
 			font-weight: 700;
 		}
+	}
+	.list{
+		a{
+			color: #1565c0;
+		}
+	}
+	.link{
+		color: #1565c0;
 	}
 }

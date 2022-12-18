@@ -1,16 +1,14 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import Footer from "../components/Footer/Footer";
+
 import Header from "../components/Header/Header";
 import Layout from "../components/ui/Layout/Layout";
 import Home from "../pages/Home/Home";
 import Invoice from "../pages/Invoice/Invoice";
+import Propertydamages from "../pages/Propertydamages/Propertydamages";
 import ResidentialBuilding from "../pages/ResidentialBuilding/ResidentialBuilding";
 
-interface RoutesProps {
-
-}
-const Router: FC<RoutesProps> = () => {
+const Router: FC = () => {
 	return (
 		<Layout>
 			<Header />
@@ -18,8 +16,9 @@ const Router: FC<RoutesProps> = () => {
 				<Route path="/" element={<Home />} />
 				<Route path="/residentialbuilding/:id" element={<ResidentialBuilding />} />
 				<Route path="/invoice/:id" element={<Invoice />} />
+				<Route path="/propertydamages/:id" element={<Propertydamages />} />
 			</Routes>
-			<Footer />
+
 		</Layout>
 	);
 }

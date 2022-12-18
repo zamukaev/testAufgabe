@@ -10,16 +10,13 @@ interface ListItemProps {
 }
 
 const ListItem: FC<ListItemProps> = ({ list }) => {
-	const id: string = list.relationships.residential_building.data.id;
-	console.log(list)
 	return (
 		<div className={styles.list}>
-			<p>Damage date: {list.attributes.damage_date}</p>
-			<p>Identification number: {list.attributes.identification_number}</p>
-			<p>Report date:{list.attributes.report_date}</p>
-			{list.relationships.invoices.data.map(invoice => <ul><Invoice invoice={invoice} /></ul>)}
-			<p><Link to={`/residentialbuilding/${id}`}>{list.relationships.residential_building.data.type}</Link></p>
-		</div >
+			<p>Damage date:  <span>{list.attributes.damage_date}</span></p>
+			<p>Identification number: <span>{list.attributes.identification_number}</span></p>
+			<p>Report date: <span>{list.attributes.report_date}</span></p>
+			<Link to={`/propertydamages/${list.id}`}>more...</Link>
+		</div>
 	);
 }
 
